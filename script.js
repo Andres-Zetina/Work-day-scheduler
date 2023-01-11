@@ -23,7 +23,7 @@
 var timeBlocks = document.querySelectorAll(".time-block");
 var currentHour = dayjs().hour();
 timeBlocks.forEach(function(timeBlock){
-  var timeBlockHour = parseInt(timeBlock.id.slice(-2));
+  var timeBlockHour = parseInt(timeBlock.id.split("-")[1], 10);
   if(timeBlockHour < currentHour) {
     timeBlock.classList.add("past");
   } else if (timeBlockHour === currentHour){
